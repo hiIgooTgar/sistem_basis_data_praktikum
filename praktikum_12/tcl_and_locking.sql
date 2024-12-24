@@ -3,7 +3,7 @@ SELECT USER, HOST, PASSWORD FROM USER
 CREATE USER 'user_admin'@'localhost' IDENTIFIED BY '123';
 GRANT ALL ON praktikumsbd.* TO 'user_admin'@'localhost'
 
-CREATE USER 'user' IDENTIFIED BY '123';
+CREATE USER 'user';
 GRANT ALL ON praktikumsbd.* TO 'user'
 
 DROP USER 'user_admin'@'localhost'
