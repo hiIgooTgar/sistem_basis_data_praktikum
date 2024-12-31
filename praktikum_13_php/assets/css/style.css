@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary: #00bbff;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  padding: 2rem 10%;
+  flex-direction: column;
+}
+
+.home .welcome {
+  font-size: 2.5rem;
+}
+
+.home .welcome span {
+  color: var(--primary);
+}
+
+.home .list-menu {
+  margin: 1rem 0;
+  display: flex;
+  gap: 2rem;
+  background: var(--primary);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.home .list-menu .col {
+  display: flex;
+  gap: 2rem;
+}
+
+.home .list-menu a {
+  background: var(--primary);
+  color: #000;
+}
+
+.home .list-menu a:hover {
+  color: var(--primary);
+  background: #000;
+  width: 100%;
+}
