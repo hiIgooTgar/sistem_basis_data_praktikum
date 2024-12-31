@@ -1,4 +1,7 @@
-<?php require "./koneksi/config.php"; ?>
+<?php
+require "./koneksi/config.php";
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,22 +17,21 @@
     <main class="col-left">
         <form action="" method="post">
             <h1>Login</h1>
-            <p>Masukan username dan password anda</p>
+            <p>Masukan <span>username</span> dan <span>password</span> anda</p>
             <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" name="namakaryawan" id="namakaryawan">
+                <input type="text" name="namakaryawan" required autocomplete="off" id="namakaryawan">
             </div>
             <div class="form-group">
                 <label for="">Password</label>
-                <input type="text" name="sandi" id="sandi">
+                <input type="password" name="sandi" required autocomplete="off" id="sandi">
             </div>
-            <button name="login" type="submit">LOGIN </button>
+            <button name="login" type="submit">Login</button>
         </form>
     </main>
     <main class="col-right">
         <div class="content">
             <h2>Ampu Mart</h1>
-                <h1>AMIKOM PURWOKERTO</h1>
         </div>
     </main>
 </body>
@@ -44,18 +46,23 @@ if (isset($_POST['login'])) {
     $password  = $_POST['sandi'];
 
     $query = mysqli_query($conn, "SELECT * FROM tbkaryawan WHERE namakaryawan = '$username' AND sandi = '$password'");
-
-    $result = mysqli_fetch_array($query);
-
-    if ($result) {
+    $data = mysqli_fetch_array($query);
+    $cek = mysqli_num_rows($query);
+    if ($cek > 0) {
+        $_SESSION['login'] = 1;
+        $_SESSION['namakaryawan'] = $data['namakaryawan'];
+        $_SESSION['sandi'] = $data['sandi'];
+        $_SESSION['idkaryawan'] = $data['idkaryawan'];
+        $_SESSION['teleponkaryawan'] = $data['teleponkaryawan'];
+        $_SESSION['jabatan'] = $data['jabatan'];
         echo "
         <script>alert('Login berhasil');
         document.location.href = 'home.php'</script>
         ";
     } else {
         echo "
-        <script>alert('username dan password anda salah!');
-        document.location.href = 'login.php'</script>
+        <script>alert('Username dan password anda salah!');
+        document.location.href = './'</script>
         ";
     }
 }

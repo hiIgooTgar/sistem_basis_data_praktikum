@@ -7,7 +7,8 @@
 }
 
 :root {
-  --primary: #00bbff;
+  --primary: #10b981;
+  --primary-dark: #059669;
 }
 
 body {
@@ -22,10 +23,11 @@ body {
 
 input {
   width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 0.9rem 1rem;
+  font-size: 1.1rem;
   border: 2px solid #000;
-  border-radius: 3px;
+  border-radius: 8px;
+  letter-spacing: 1px;
   outline: none;
 }
 
@@ -33,8 +35,13 @@ input:focus {
   border: 2px solid var(--primary);
 }
 
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 .col-left {
-  flex: 1 1 50%;
+  flex: 1 1 45%;
   display: flex;
   align-items: center;
   padding: 5%;
@@ -52,6 +59,10 @@ input:focus {
   margin-bottom: 1.5rem;
 }
 
+.col-left form p span {
+  color: var(--primary-dark);
+}
+
 .col-left form button {
   width: 100%;
   color: #000;
@@ -60,20 +71,22 @@ input:focus {
   border: none;
   outline: none;
   cursor: pointer;
-  border: 2px solid var(--primary);
   background: transparent;
   letter-spacing: 2px;
+  font-weight: 600;
+  background: var(--primary);
+  border-radius: 8px;
+  color: #fff;
 }
 
 .col-left form button:hover {
-  border: 2px solid var(--primary);
-  background: var(--primary);
+  background: var(--primary-dark);
 }
 
 .col-right {
-  flex: 1 1 50%;
+  flex: 1 1 55%;
   display: flex;
-  padding: 5%;
+  padding: 4%;
   background: var(--primary);
 }
 
@@ -86,10 +99,7 @@ input:focus {
   text-align: center;
   flex-direction: column;
   border: 2px solid #fff;
-}
-
-.col-right .content h1 {
-  color: #fff;
+  border-radius: 8px;
 }
 
 .col-right .content h2 {

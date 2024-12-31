@@ -7,7 +7,8 @@
 }
 
 :root {
-  --primary: #00bbff;
+  --primary: #10b981;
+  --primary-dark: #059669;
 }
 
 body {
@@ -16,6 +17,12 @@ body {
   display: flex;
   padding: 2rem 10%;
   flex-direction: column;
+}
+
+.home .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .home .welcome {
@@ -34,21 +41,23 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0;
 }
 
 .home .list-menu .col {
   display: flex;
-  gap: 2rem;
 }
 
 .home .list-menu a {
   background: var(--primary);
   color: #000;
+  padding: 1rem;
 }
 
 .home .list-menu a:hover {
-  color: var(--primary);
-  background: #000;
-  width: 100%;
+  background: var(--primary-dark);
+}
+
+.home .list-menu .log:hover {
+  background: red;
 }
