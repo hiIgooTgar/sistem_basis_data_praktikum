@@ -1,0 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --primary-light: #6ee7b7;
+  --primary: #34d399;
+  --primary-medium: #10b981;
+  --primary-dark: #059669;
+  --primary-dark-medium: #047857;
+  --primary-dark-large: #065f46;
+}
+
+.row-auth-registrasi {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.row-auth-login {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+}
+
+.left-col {
+  padding: 5%;
+  flex: 1 1 45%;
+}
+
+.left-col .title {
+  margin-bottom: 2rem;
+}
+
+.left-col .title h1 {
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--primary-dark-large)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.left-col .title p {
+  color: #777;
+}
+
+.right-col {
+  flex: 1 1 55%;
+  width: 100%;
+  padding: 5%;
+  background: var(--primary-dark);
+}
+
+.row-auth-registrasi .right-col {
+  height: auto;
+}
+
+.row-auth-login .right-col {
+  height: 100%;
+}
+
+.right-col .content {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.right-col .content h1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #777;
+}
+
+input {
+  width: 100%;
+  border: 2px solid #777;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.8rem 1rem;
+  letter-spacing: 1.3px;
+  border-radius: 5px;
+}
+
+input:focus {
+  border: 2px solid var(--primary-dark);
+}
+
+select {
+  width: 100%;
+  border: 2px solid #777;
+  font-size: 0.95rem;
+  outline: none;
+  padding: 0.8rem 1rem;
+  letter-spacing: 1.3px;
+  border-radius: 5px;
+}
+
+select:focus {
+  border: 2px solid var(--primary-dark);
+}
+
+textarea {
+  width: 100%;
+  border: 2px solid #777;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.8rem 1rem;
+  letter-spacing: 1.3px;
+  border-radius: 5px;
+  height: 110px;
+}
+
+textarea:focus {
+  border: 2px solid var(--primary-dark);
+}
+
+.btn-auth {
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  background: var(--primary-dark);
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: all 200ms ease-in-out;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.btn-auth:hover {
+  background: var(--primary-dark-medium);
+}
+
+.link-auth {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.link-auth a {
+  color: var(--primary-dark);
+}
+
+@media screen and (max-width: 768px) {
+  .left-col {
+    flex: 1 1 100%;
+  }
+
+  .row-auth-registrasi .left-col {
+    padding: 4rem 5%;
+  }
+
+  .right-col {
+    display: none;
+  }
+}
