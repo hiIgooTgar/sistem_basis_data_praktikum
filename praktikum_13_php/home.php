@@ -1,5 +1,13 @@
 <?php include "./koneksi/config.php";
-session_start() ?>
+session_start();
+
+if (!isset($_SESSION['idkaryawan'])) {
+    echo "<script>
+                alert('Harap login dahulu');
+                window.location.href = './';
+            </script>";
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
