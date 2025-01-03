@@ -16,3 +16,71 @@
   height: 70dvh;
   padding: 0 10%;
 }
+
+.hero .content h1 {
+  font-size: 2.8rem;
+}
+
+.hero .content h1 span {
+  color: var(--primary-dark);
+}
+
+.hero .content h2 {
+  color: #444;
+  font-size: 1.6rem;
+}
+
+.hero .content h2 span {
+  font-style: italic;
+}
+
+.hero .content p {
+  width: 60%;
+  color: #777;
+  margin: 1rem 0;
+}
+
+.contact {
+  width: 100%;
+  padding: 0 10%;
+}
+
+.contact .row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contact .row .left-col {
+  flex: 1 1 calc(50% - 1.5rem);
+}
+
+.contact .row .left-col iframe {
+  width: 100%;
+  height: 250px;
+}
+
+.contact .row .right-col {
+  flex: 1 1 50%;
+}
+
+.contact .row .right-col .content {
+  display: flex;
+}
+
+/* button */
+.btn-menu {
+  display: inline-block;
+  padding: 0.85rem 1rem;
+  background: var(--primary-dark);
+  color: #fff;
+  outline: none;
+  border: none;
+  font-size: 0.95rem;
+  letter-spacing: 1.1px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-menu:hover {
+  background: var(--primary-dark-large);
+}

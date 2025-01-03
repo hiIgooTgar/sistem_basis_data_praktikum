@@ -60,3 +60,10 @@
   font-size: 0.9rem;
   border-radius: 3px;
 }
+
+/* footer */
+.footer-main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
