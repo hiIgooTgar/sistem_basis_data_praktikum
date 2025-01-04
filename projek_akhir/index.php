@@ -12,9 +12,7 @@ session_start();
     <title>Home - Srawung Roso</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="./assets/css/fonts.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="assets/css/boxicons.min.css"> -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
 </head>
 
 <body>
@@ -101,15 +99,19 @@ session_start();
                 <h2>Media Sosial <span>Srawung</span>Roso</h2>
                 <div class="content">
                     <div class="box">
-                        <i class='bx bxl-instagram'></i>
+                        <img src="assets/icon/bootstrap-icons/instagram.svg">
                         <a href="">dapoer_SrawungRoso</a>
                     </div>
                     <div class="box">
-                        <i class='bx bxl-facebook-square'></i>
+                        <img src="assets/icon/bootstrap-icons/facebook.svg">
                         <a href="">dapoer_SrawungRoso</a>
                     </div>
                     <div class="box">
-                        <i class='bx bxl-tiktok'></i>
+                        <img src="assets/icon/bootstrap-icons/tiktok.svg">
+                        <a href="">dapoer_SrawungRoso</a>
+                    </div>
+                    <div class="box">
+                        <img src="assets/icon/bootstrap-icons/youtube.svg">
                         <a href="">dapoer_SrawungRoso</a>
                     </div>
                 </div>

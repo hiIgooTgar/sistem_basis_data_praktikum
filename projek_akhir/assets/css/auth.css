@@ -33,6 +33,21 @@
 .left-col {
   padding: 5%;
   flex: 1 1 45%;
+  position: relative;
+}
+
+.left-col .home-back {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: var(--primary-dark-large);
+  width: 40px;
+  border-radius: 5px 0 0 5px;
+  padding: 0.5rem;
+}
+
+.left-col .home-back img {
+  filter: invert(100%);
 }
 
 .left-col .title {

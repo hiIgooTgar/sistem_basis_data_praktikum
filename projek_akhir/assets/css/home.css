@@ -163,8 +163,8 @@
   color: var(--primary-dark);
 }
 
-.contact .row .right-col .content .box i {
-  font-size: 1.5rem;
+.contact .row .right-col .content .box img {
+  color: #fff;
 }
 
 .contact .row .right-col .addres {

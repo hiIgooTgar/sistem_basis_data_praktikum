@@ -13,6 +13,11 @@
     <div class="container">
         <div class="row-auth-registrasi">
             <div class="left-col">
+                <a href="./">
+                    <div class="home-back">
+                        <img src="./assets/icon/bootstrap-icons/house-fill.svg">
+                    </div>
+                </a>
                 <div class="title">
                     <h1>Registrasi Akun</h1>
                     <p>Masukan data-data akun anda</p>

@@ -22,6 +22,11 @@ if (!empty($_SESSION['login'])) {
     <div class="container">
         <main class="row-auth-login">
             <div class="left-col">
+                <a href="./">
+                    <div class="home-back">
+                        <img src="./assets/icon/bootstrap-icons/house-fill.svg">
+                    </div>
+                </a>
                 <div class="title">
                     <h1>Login Akun</h1>
                     <p>Masukan dan password anda</p>
