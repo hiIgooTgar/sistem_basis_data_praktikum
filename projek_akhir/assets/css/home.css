@@ -13,8 +13,20 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: 70dvh;
+  height: 80dvh;
   padding: 0 10%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  color: #fff;
+}
+
+.hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100dvh;
 }
 
 .hero .content h1 {
@@ -26,7 +38,7 @@
 }
 
 .hero .content h2 {
-  color: #444;
+  color: #eee;
   font-size: 1.6rem;
 }
 
@@ -36,17 +48,77 @@
 
 .hero .content p {
   width: 60%;
-  color: #777;
+  color: #ccc;
   margin: 1rem 0;
 }
 
+/* about */
+.about {
+  width: 100%;
+  background: #fff;
+  padding: 7rem 10% 0;
+}
+
+.about .row {
+  display: flex;
+  gap: 2rem;
+}
+
+.about .row .left-col {
+  flex: 1 1 calc(50% - 2rem);
+}
+
+.about .row .left-col img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about .row .right-col {
+  flex: 1 1 50%;
+}
+
+.about .row .right-col h2 {
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.about .row .right-col h2::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: "";
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--primary-dark-large)
+  );
+}
+
+.about .row .right-col h2 span {
+  color: var(--primary-dark);
+}
+
+.about .row .right-col p {
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.about .row .right-col p span {
+  color: var(--primary-dark);
+}
+
+/* contact */
 .contact {
   width: 100%;
-  padding: 0 10%;
+  background: #fff;
+  padding: 7rem 10%;
 }
 
 .contact .row {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -63,8 +135,46 @@
   flex: 1 1 50%;
 }
 
+.contact .row .right-col h2 {
+  margin-bottom: 1rem;
+}
+
+.contact .row .right-col h2 span {
+  color: var(--primary-dark);
+}
+
 .contact .row .right-col .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.contact .row .right-col .content .box {
   display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.contact .row .right-col .content .box a {
+  color: #000;
+}
+
+.contact .row .right-col .content .box a:hover {
+  color: var(--primary-dark);
+}
+
+.contact .row .right-col .content .box i {
+  font-size: 1.5rem;
+}
+
+.contact .row .right-col .addres {
+  color: #000;
+  border: 1px solid var(--primary-dark);
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+  border-radius: 5px;
 }
 
 /* button */

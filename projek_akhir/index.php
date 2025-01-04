@@ -29,8 +29,8 @@ session_start();
                 </div>
                 <div class="nav-list">
                     <a href="./" class="nav-link">Home</a>
-                    <a href="login.php" class="nav-link">Masuk</a>
-                    <a href="registrasi.php" class="nav-link">Daftar</a>
+                    <a href="login.php" class="nav-link badge-sign">Masuk</a>
+                    <a href="registrasi.php" class="nav-link badge-sign">Daftar</a>
                 </div>
             </nav>
         </header>
@@ -69,6 +69,7 @@ session_start();
         <?php } ?>
     <?php } ?>
 
+    <img class="hero-image" src="assets/images/hero.jpg">
     <section class="hero" id="home">
         <main class="content">
             <h1>Selamat Datang di <span>Srawung</span>Roso</h1>
@@ -76,6 +77,19 @@ session_start();
             <p>Di Srawung Roso, kami menghadirkan cita rasa autentik Jawa yang memanjakan lidah, dipadukan dengan suasana yang hangat dan penuh kenangan. Temukan kelezatan di setiap sajian kami.</p>
             <button class="btn-menu" type="button">Daftar Menu</button>
         </main>
+    </section>
+
+
+    <section class="about">
+        <div class="row">
+            <div class="left-col">
+                <img src="assets/images/about.jpg" alt="tentang SrawungRoso">
+            </div>
+            <div class="right-col">
+                <h2>Tentang <span>Srawung</span>Roso</h2>
+                <p><span>Srawung</span>Roso didirikan pada tahun 1970 oleh Pak Harjo dan Bu Sri, pasangan suami istri yang terinspirasi oleh kekayaan kuliner Jawa. Berawal dari sebuah warung kecil di kampung halaman, mereka menghadirkan hidangan khas dengan cita rasa autentik dan suasana akrab yang mencerminkan budaya Jawa. Nama <span>Srawung</span>Roso diambil dari filosofi Jawa yang berarti “berinteraksi dengan rasa,” mencerminkan semangat mereka untuk menghubungkan hati melalui makanan. Kini, setelah lebih dari lima dekade, <span>Srawung</span>Roso tetap setia pada tradisi, menggabungkan kelezatan masa lalu dengan inovasi modern untuk menciptakan pengalaman kuliner yang hangat, menggugah selera, dan penuh nostalgia.</p>
+            </div>
+        </div>
     </section>
 
     <section class="contact">
@@ -88,25 +102,27 @@ session_start();
                 <div class="content">
                     <div class="box">
                         <i class='bx bxl-instagram'></i>
-                        <p>SrawungRoso_official</p>
+                        <a href="">dapoer_SrawungRoso</a>
                     </div>
                     <div class="box">
                         <i class='bx bxl-facebook-square'></i>
-                        <p>SrawungRoso_official</p>
+                        <a href="">dapoer_SrawungRoso</a>
                     </div>
                     <div class="box">
                         <i class='bx bxl-tiktok'></i>
-                        <p>SrawungRoso_official</p>
+                        <a href="">dapoer_SrawungRoso</a>
                     </div>
+                </div>
+                <div class="addres">
+                    <i class='bx bx-current-location'></i>
+                    <p>Jl. Letkol Isdiman, Bancar, Kec. Purbalingga, Kabupaten Purbalingga, Jawa Tengah 53316</p>
                 </div>
             </div>
         </main>
     </section>
 
-
-
     <footer class="footer-main">
-        <p>Create by Igo Tegar Prambudhy | SBD <span>
+        <p>Created by Igo Tegar Prambudhy | SBD <span>
                 <script>
                     document.write(new Date().getFullYear())
                 </script>
