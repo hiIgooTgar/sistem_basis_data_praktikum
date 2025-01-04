@@ -3,3 +3,5 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.add("active-menu");
   }
 });
+
+// datatables inisialisasi
