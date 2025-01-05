@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_users'])) {
 }
 
 $id_users = $_GET['id_users'];
-if (!isset($_SESSION['id_users'])) {
+if (!isset($id_users)) {
     echo "<script>alert('Anda harus login dahulu');
     window.location.href = '../login.php'</script>";
 }

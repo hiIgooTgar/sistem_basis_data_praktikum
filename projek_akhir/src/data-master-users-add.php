@@ -14,11 +14,11 @@ include "../components/header.php" ?>
                 <div class="row-form">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap</label>
-                        <input type="text" name="nama" id="nama">
+                        <input required autocomplete="off" type="text" name="nama" id="nama">
                     </div>
                     <div class="form-group">
                         <label for="role">Role</label>
-                        <select name="role" id="role">
+                        <select required name="role" id="role">
                             <option value="0">-- Pilih Jenis Role --</option>
                             <option value="0">Administrator</option>
                             <option value="1">Kostumer</option>
