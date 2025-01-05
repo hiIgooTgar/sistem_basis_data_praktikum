@@ -1,6 +1,11 @@
 <?php
 include "../koneksi/config.php";
 session_start();
+
+if (!isset($_SESSION['id_users'])) {
+    echo "<script>alert('Anda harus login dahulu');
+    window.location.href = '../login.php'</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +16,10 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title_web ?> - SrawungRoso</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/data-master.css">
     <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/library/css/DataTables/datatables.css">
     <link rel="stylesheet" href="../assets/library/css/DataTables/jquery.dataTables.css">
-    <link rel="stylesheet" href="../assets/library/css/DataTables/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/library/css/DataTables/jquery.dataTables.min.css">
 </head>
 
 <body>

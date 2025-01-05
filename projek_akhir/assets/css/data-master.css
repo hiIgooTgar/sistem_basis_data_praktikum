@@ -1,0 +1,43 @@
+:root {
+  --primary-light: #6ee7b7;
+  --primary: #34d399;
+  --primary-medium: #10b981;
+  --primary-dark: #059669;
+  --primary-dark-medium: #047857;
+  --primary-dark-large: #065f46;
+  --primary-dark-xl: #064e3b;
+}
+
+.list-link-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.list-link-data .box {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.list-link-data .box a {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+
+.list-link-data .box a:hover {
+  background: var(--primary-dark-large);
+}
+
+.list-link-data p {
+  background: var(--primary-dark);
+}
+
+.data-master {
+  width: 100%;
+  background: #fff;
+  padding: 5rem 10%;
+}

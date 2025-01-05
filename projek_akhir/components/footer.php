@@ -10,13 +10,12 @@
     <!-- <script src="../assets/library/js/bootstrap.bundle.min.js"></script> -->
     <script src="../assets/library/js/jquery-3.7.1.js"></script>
     <script src="../assets/library/js/DataTables/jquery.dataTables.min.js"></script>
-    <script src="../assets/library/js/DataTables/dataTables.bootstrap.min.js"></script>
-
-
     <script src="../assets/js/main.js"></script>
     <script>
         $(document).ready(function() {
-            $('#myDataTables').DataTable();
+            $('#myDataTables').DataTable({
+                orderMulti: false,
+            });
         });
     </script>
     </body>
