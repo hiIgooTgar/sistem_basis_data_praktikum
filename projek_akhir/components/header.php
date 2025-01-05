@@ -17,6 +17,7 @@ if (!isset($_SESSION['id_users'])) {
     <title><?= $title_web ?> - SrawungRoso</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/data-master.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../assets/css/fonts.css">
     <link rel="stylesheet" href="../assets/library/css/DataTables/jquery.dataTables.css">
     <link rel="stylesheet" href="../assets/library/css/DataTables/jquery.dataTables.min.css">
@@ -48,6 +49,7 @@ if (!isset($_SESSION['id_users'])) {
                     </div>
                     <div class="nav-list">
                         <a href="../" class="nav-link">Home</a>
+                        <a href="../src/menu.php" class="nav-link">Menu</a>
                         <a href="../src/data-master-users.php" class="nav-link">Data Master</a>
                         <p class="nav-link">Hi, <?= $_SESSION['nama'] ?></p>
                         <a href="../logout.php" class="nav-link btn-logout">Log Out</a>

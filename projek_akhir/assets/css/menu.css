@@ -1,0 +1,115 @@
+:root {
+  --primary-light: #6ee7b7;
+  --primary: #34d399;
+  --primary-medium: #10b981;
+  --primary-dark: #059669;
+  --primary-dark-medium: #047857;
+  --primary-dark-large: #065f46;
+  --primary-dark-xl: #064e3b;
+  --primary-dark-xl-double: #022c22;
+}
+
+.menu {
+  width: 100%;
+  background: #fff;
+  padding: 5rem 10%;
+}
+
+.menu .content {
+  display: flex;
+  gap: 1rem;
+}
+
+/* makanan */
+.menu .content .list-makanan {
+  flex: 1 1 50%;
+  border: 1px solid var(--primary-dark);
+  border-radius: 8px;
+}
+
+.menu .content .list-makanan h2 {
+  background: var(--primary-dark);
+  padding: 1rem;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.menu .content .list-makanan .row {
+  padding: 2rem 1rem;
+}
+
+.menu .content .list-makanan .row .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 2.5px dashed var(--primary-dark);
+}
+.menu .content .list-makanan .row .box img {
+  padding-top: 5px;
+}
+
+.menu .content .list-makanan .row .box h4 {
+  color: #000;
+}
+
+.menu .content .list-makanan .row .box p {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 0.95rem;
+}
+
+/* minuman */
+.menu .content .list-minuman {
+  flex: 1 1 50%;
+  border: 1px solid var(--primary-dark);
+  border-radius: 8px;
+}
+
+.menu .content .list-minuman h2 {
+  background: var(--primary-dark);
+  padding: 1rem;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.menu .content .list-minuman .row {
+  padding: 2rem 1rem;
+}
+
+.menu .content .list-minuman .row .box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 2.5px dashed var(--primary-dark);
+}
+
+.menu .content .list-minuman .row .box img {
+  padding-top: 5px;
+}
+
+.menu .content .list-minuman .row .box h4 {
+  color: #000;
+}
+
+.menu .content .list-minuman .row .box p {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 0.95rem;
+}
+
+/* pesan menu */
+.d-pesan-menu {
+  display: flex;
+  padding-top: 2.5rem;
+  justify-content: center;
+}

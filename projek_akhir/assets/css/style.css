@@ -153,6 +153,19 @@
   margin-bottom: 1.6rem;
 }
 
+.title-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.title-header h1 {
+  font-size: 2rem;
+}
+
+.title-header h1 span {
+  color: var(--primary-dark);
+}
+
 .form-group {
   display: block;
   margin-bottom: 1.2rem;

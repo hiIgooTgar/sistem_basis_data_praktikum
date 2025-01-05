@@ -41,6 +41,7 @@ session_start();
                     </div>
                     <div class="nav-list">
                         <a href="./" class="nav-link">Home</a>
+                        <a href="src/menu.php" class="nav-link">Menu</a>
                         <a href="src/data-master-users.php" class="nav-link">Data Master</a>
                         <p class="nav-link">Hi, <?= $_SESSION['nama'] ?></p>
                         <a href="logout.php" class="nav-link btn-logout">Log Out</a>
