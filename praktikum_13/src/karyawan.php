@@ -6,7 +6,7 @@ include "../components/navbar_inside.php";
 ?>
 
 <div class="container">
-    <a href="./src/insert_karyawan.php" class="btn btn-primary">Tambah Karyawan</a>
+    <a href="./insert_karyawan.php" class="btn btn-primary">Tambah Karyawan</a>
     <table class="table-main">
         <tr>
             <th>No</th>
@@ -35,8 +35,8 @@ include "../components/navbar_inside.php";
                 <td><?= $data['jabatan'] ?></td>
                 <td><?= $data['sandi'] ?></td>
                 <td>
-                    <a href="./src/update_karyawan.php?idkaryawan=<?= $data['idkaryawan'] ?>" class="btn-warning btn-sm">Ubah</a>
-                    <a href="./src/delete_karyawan.php?idkaryawan=<?= $data['idkaryawan'] ?>" class="btn-danger btn-sm" onclick="return confirm('Yakin ingin dihapus?');">Delete</a>
+                    <a href="./update_karyawan.php?idkaryawan=<?= $data['idkaryawan'] ?>" class="btn-warning btn-sm">Ubah</a>
+                    <a href="./delete_karyawan.php?idkaryawan=<?= $data['idkaryawan'] ?>" class="btn-danger btn-sm" onclick="return confirm('Yakin ingin dihapus?');">Delete</a>
                 </td>
             </tr>
         <?php endwhile; ?>

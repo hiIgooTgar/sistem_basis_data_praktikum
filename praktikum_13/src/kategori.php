@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "../connection/config.php";
 $title_web = "Produk | SBD";
 include "../components/header.php";
@@ -11,29 +11,29 @@ include "../components/navbar_inside.php";
     </a>
     <table class="table-main">
         <tr>
-            <th>No</th>
-            <th>Nama Kategori</th>
-            <th>Action</th>
+            <th style="width: 8%;">No</th>
+            <th style="width: 72%;">Nama Kategori</th>
+            <th style="width: 20%;">Action</th>
         </tr>
-        <?php 
+        <?php
         $increment = 1;
         $query = mysqli_query($connect, "SELECT * FROM tbkategori");
         $check = mysqli_num_rows($query);
-        if($check == 0) {
+        if ($check == 0) {
             echo "<tr>
                 <td colspan='5' align='center'><h3>Data Kategori Kosong!</h3></td>
             </tr>";
         }
-        while($data = mysqli_fetch_assoc($query)) :
+        while ($data = mysqli_fetch_assoc($query)) :
         ?>
-        <tr>
-            <td><?= $increment++ ?></td>
-            <td><?= $data['namakategori'] ?></td>
-            <td>
-                <a class="btn-warning btn-sm" href="./update_kategori.php?idkategori=<?= $data['idkategori'] ?>">Ubah</a>
-                <a class="btn-danger btn-sm" href="./delete_kategori.php?idkategori=<?= $data['idkategori'] ?>" onclick="return confirm('Yakin data dihapus?');">Hapus</a>
-            </td>
-        </tr>
+            <tr>
+                <td><?= $increment++ ?></td>
+                <td><?= $data['namakategori'] ?></td>
+                <td>
+                    <a class="btn-warning btn-sm" href="./update_kategori.php?idkategori=<?= $data['idkategori'] ?>">Ubah</a>
+                    <a class="btn-danger btn-sm" href="./delete_kategori.php?idkategori=<?= $data['idkategori'] ?>" onclick="return confirm('Yakin data dihapus?');">Hapus</a>
+                </td>
+            </tr>
         <?php endwhile; ?>
     </table>
 </div>

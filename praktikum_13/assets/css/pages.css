@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary: #10b981;
+  --primary-dark: #059669;
+}
+
+.img-hero-section {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  width: 100%;
+  height: 90dvh;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.hero main h1 {
+  font-size: 2.3rem;
+  margin: 0.3rem 0;
+}
+
+.hero main h1 span {
+  color: var(--primary);
+}
+
+.hero main h2 {
+  font-size: 1.8rem;
+}
+
+.hero main p {
+  width: 50%;
+  color: #ccc;
+}
+
+.content-home {
+  width: 100%;
+  background: #fff;
+  position: relative;
+}
+
+.content-home .list-menu {
+  position: absolute;
+  top: -3.5rem;
+  left: 8%;
+  right: 8%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.content-home .list-menu .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  color: #fff;
+  border-radius: 10px;
+  background: var(--primary);
+}
+
+.content-home .list-menu .box h4 {
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.content-home .list-menu .box p {
+  background: var(--primary-dark);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.contact {
+  width: 100%;
+  background: #fff;
+}
+
+.contact .row {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact .row .left-col {
+  flex: 1 1 50%;
+}
+
+.contact .row .left-col iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.contact .row .right-col {
+  flex: 1 1 50%;
+}
+
+.contact .row .right-col .social {
+  margin-bottom: 1.5rem;
+}
+
+.contact .row .right-col .social h3 {
+  margin-bottom: 0.8rem;
+}
+
+.contact .row .right-col .social h3 span {
+  color: var(--primary);
+}
+
+.contact .row .right-col .social p {
+  margin-bottom: 0.5rem;
+}
+
+.contact .row .right-col h4 {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.7rem;
+  font-weight: 400;
+}

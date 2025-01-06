@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include "../connection/config.php";
 $title_web = "Tambah Karyawan | SBD";
@@ -7,17 +7,17 @@ include "../components/navbar_inside.php";
 
 $idkaryawan = $_GET['idkaryawan'];
 
-if(!isset($_GET['idkaryawan'])) {
+if (!isset($_GET['idkaryawan'])) {
     echo "
     <script>alert('Data kategori tidak ditemukan!');
-    window.location.href = '../'</script>
+    window.location.href = 'karyawan.php'</script>
     ";
 }
 
 $query = mysqli_query($connect, "SELECT * FROM tbkaryawan WHERE idkaryawan = $idkaryawan");
 $dataKaryawan = mysqli_fetch_assoc($query);
 
-if(mysqli_num_rows($query) < 1) {
+if (mysqli_num_rows($query) < 1) {
     die("Data tidak ditemukan!");
 }
 
@@ -25,7 +25,7 @@ if(mysqli_num_rows($query) < 1) {
 ?>
 
 <div class="container">
-    <a href="../" class="btn btn-sm">Kembali</a>
+    <a href="karyawan.php" class="btn btn-sm">Kembali</a>
     <form action="" method="post" class="form-main">
         <input type="hidden" name="idkaryawan" value="<?= $dataKaryawan['idkaryawan'] ?>">
         <div class="form-group">
@@ -48,10 +48,10 @@ if(mysqli_num_rows($query) < 1) {
     </form>
 </div>
 
-<?php 
+<?php
 include "../components/footer.php";
 
-if(isset($_POST['updateKaryawan'])) {
+if (isset($_POST['updateKaryawan'])) {
     $idkaryawan = htmlspecialchars($_POST['idkaryawan']);
     $namakaryawan = htmlspecialchars($_POST['namakaryawan']);
     $teleponkaryawan = htmlspecialchars($_POST['teleponkaryawan']);
@@ -61,15 +61,15 @@ if(isset($_POST['updateKaryawan'])) {
     $sql = "UPDATE tbkaryawan SET namakaryawan = '$namakaryawan', teleponkaryawan = '$teleponkaryawan', jabatan = '$jabatan', sandi = '$sandi' WHERE idkaryawan = $idkaryawan";
     $query = mysqli_query($connect, $sql);
 
-    if($query > 0) {
+    if ($query > 0) {
         echo "<script>
         alert('Data karyawan berhasil diubah!');
-        window.location.href = '../'
+        window.location.href = 'karyawan.php'
         </script>";
     } else {
-         echo "<script>
+        echo "<script>
         alert('Data karyawan tidak berhasil diubah!');
-        window.location.href = '../'
+        window.location.href = 'karyawan.php'
         </script>";
     }
 }

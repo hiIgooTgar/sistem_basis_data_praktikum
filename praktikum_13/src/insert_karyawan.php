@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include "../connection/config.php";
 $title_web = "Tambah Karyawan | SBD";
@@ -9,7 +9,7 @@ include "../components/navbar_inside.php";
 ?>
 
 <div class="container">
-    <a href="../" class="btn btn-sm">Kembali</a>
+    <a href="./karyawan.php" class="btn btn-sm">Kembali</a>
     <form action="" method="post" class="form-main">
         <div class="form-group">
             <label for="namakaryawan" class="form-label">Nama Karyawan</label>
@@ -31,10 +31,10 @@ include "../components/navbar_inside.php";
     </form>
 </div>
 
-<?php 
+<?php
 include "../components/footer.php";
 
-if(isset($_POST['addKaryawan'])) {
+if (isset($_POST['addKaryawan'])) {
     $namakaryawan = htmlspecialchars($_POST['namakaryawan']);
     $teleponkaryawan = htmlspecialchars($_POST['teleponkaryawan']);
     $jabatan = htmlspecialchars($_POST['jabatan']);
@@ -43,15 +43,15 @@ if(isset($_POST['addKaryawan'])) {
     $sql = "INSERT INTO tbkaryawan(idkaryawan, namakaryawan, teleponkaryawan, jabatan, sandi) VALUES('', '$namakaryawan', '$teleponkaryawan', '$jabatan', '$sandi')";
     $query = mysqli_query($connect, $sql);
 
-    if($query > 0) {
+    if ($query > 0) {
         echo "<script>
         alert('Data karyawan berhasil ditambahkan!');
-        window.location.href = '../'
+        window.location.href = './karyawan.php'
         </script>";
     } else {
-         echo "<script>
+        echo "<script>
         alert('Data karyawan tidak berhasil ditambahkan!');
-        window.location.href = '../'
+        window.location.href = './karyawan.php'
         </script>";
     }
 }

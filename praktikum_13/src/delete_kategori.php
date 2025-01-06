@@ -1,17 +1,17 @@
-<?php 
+<?php
 
 require '../connection/config.php';
 
 $idkategori = $_GET['idkategori'];
 
-if(!isset($idkategori)) {
-    echo"<script>alert('Data tidak ditemukan!');</script>";
+if (!isset($idkategori)) {
+    echo "<script>alert('Data tidak ditemukan!');</script>";
 }
 
 $sql = "DELETE FROM tbkategori WHERE idkategori = $idkategori";
 $result = mysqli_query($connect, $sql);
 
-if($result) {
+if ($result) {
     echo "
     <script>
     alert('Data kategori berhasil dihapus!');
@@ -21,11 +21,8 @@ if($result) {
 } else {
     echo "
     <script>
-    alert('Data kategori berhasil dihapus!');
+    alert('Data kategori tidak berhasil dihapus!');
     document.location.href = './kategori.php';
     </script>
     ";
 }
-
-
-?>
