@@ -1,0 +1,41 @@
+:root {
+  --primary-light: #6ee7b7;
+  --primary: #34d399;
+  --primary-medium: #10b981;
+  --primary-dark: #059669;
+  --primary-dark-medium: #047857;
+  --primary-dark-large: #065f46;
+  --primary-dark-xl: #064e3b;
+  --primary-dark-xl-double: #022c22;
+}
+
+.pesanan {
+  width: 100%;
+  background: #fff;
+  padding: 5rem 10%;
+}
+
+.pesanan .content form {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.pesanan .content form .left-col {
+  flex: 1 1 50%;
+}
+
+.pesanan .content form .left-col .list-makanan h2 {
+  margin-bottom: 1rem;
+}
+
+.pesanan .content form .left-col .list-minuman h2 {
+  margin-bottom: 1rem;
+}
+
+.pesanan .content form .right-col {
+  flex: 1 1 50%;
+}
+
+.pesanan .content form .right-col .list-bayar h2 {
+  margin-bottom: 1rem;
+}

@@ -60,6 +60,7 @@ session_start();
                     <div class="nav-list">
                         <a href="./" class="nav-link">Home</a>
                         <a href="src/menu.php" class="nav-link">Menu</a>
+                        <a href="src/history-pesanan.php" class="nav-link">Pesanan Saya</a>
                         <p class="nav-link">Hi, <?= $_SESSION['nama'] ?></p>
                         <a href="logout.php" class="nav-link btn-logout">Log Out</a>
                     </div>
