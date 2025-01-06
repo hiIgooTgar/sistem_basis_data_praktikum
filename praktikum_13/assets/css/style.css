@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  padding: 2rem 5%;
+}
+
+.table-main {
+  border: 1px solid #000;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-main th {
+  border: 1px solid #000;
+  padding: 0.5rem 0.8rem;
+  background: #aaa;
+}
+
+.table-main td {
+  border: 1px solid #000;
+  padding: 0.4rem 0.6rem;
+}
+
+.table-main tr:hover {
+  background: #ddd;
+}
+
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #555;
+  padding: 0.45rem 1rem;
+  border: 1px solid #555;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-sm {
+  padding: 0.14rem 0.3rem;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: #434ff5;
+  color: #fff;
+  border: none;
+}
+
+.btn-danger {
+  background: #f73939;
+  color: #fff;
+  border: none;
+}
+
+.btn-warning {
+  background: #f7f139;
+  color: #000;
+  border: none;
+}
+
+.form-main {
+  display: block;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.form-control {
+  display: inline-block;
+  padding: 0.6rem 0.8rem;
+  outline: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #555;
+}
+
+.form-control:focus {
+  border: 1px solid red;
+}
+
+/* .table-main tr th:not(:hover) {
+  background: #aaa;
+} */

@@ -1,0 +1,193 @@
+CREATE DATABASE ampu_mart;
+USE ampu_mart;
+
+CREATE TABLE tbKaryawan (
+idkaryawan VARCHAR(5) PRIMARY KEY,
+namakaryawan VARCHAR(50),
+teleponkaryawan VARCHAR(15),
+jabatan VARCHAR(20),
+sandi VARCHAR(15)
+)
+
+CREATE TABLE tbPemasok (
+idpemasok VARCHAR(5)PRIMARY KEY,
+namapemasok VARCHAR (50),
+kontak VARCHAR (25),
+pic VARCHAR(35)
+)
+
+CREATE TABLE tbPelanggan (
+idpelanggan VARCHAR(10) PRIMARY KEY,
+namapelanggan VARCHAR(50),
+alamatpelanggan VARCHAR(20),
+teleponpelanggan VARCHAR(25)
+)
+
+CREATE TABLE tbPenjualan (
+notajual VARCHAR(15) PRIMARY KEY,
+tgljual DATE,
+idkaryawan VARCHAR(5),
+idpelanggan VARCHAR(10),
+totaljual INT,
+FOREIGN KEY (idkaryawan) REFERENCES tbKaryawan(idkaryawan),
+FOREIGN KEY (idpelanggan) REFERENCES tbPelanggan(idpelanggan)
+)
+
+CREATE TABLE tbKategori (
+idkategori VARCHAR(3) PRIMARY KEY,
+namakategori VARCHAR(40)
+)
+
+CREATE TABLE tbProduk (
+idproduk VARCHAR(15) PRIMARY KEY,
+namaproduk VARCHAR(70),
+idkategori VARCHAR(3),
+stok INT,
+harga INT,
+FOREIGN KEY (idkategori) REFERENCES tbKategori(idkategori)
+)
+
+CREATE TABLE tbPembelian (
+notabeli VARCHAR(15) PRIMARY KEY,
+tglbeli DATE,
+idkaryawan VARCHAR(5),
+idpemasok VARCHAR(5),
+totalbeli INT,
+FOREIGN KEY (idkaryawan) REFERENCES tbKaryawan(idkaryawan),
+FOREIGN KEY (idpemasok) REFERENCES tbPemasok(idpemasok)
+)
+
+CREATE TABLE tbDetailJual (
+notajual VARCHAR(15) PRIMARY KEY,
+idproduk VARCHAR(15),
+jumlah SMALLINT,
+harga INT,
+subtotal INT,
+FOREIGN KEY (idproduk) REFERENCES tbProduk(idproduk)
+)
+
+CREATE TABLE tbDetailBeli (
+notabeli VARCHAR(15) PRIMARY KEY,
+idproduk VARCHAR(15),
+jumlah SMALLINT,
+harga INT,
+subtotal INT,
+FOREIGN KEY (idproduk) REFERENCES tbProduk(idproduk)
+)
+
+
+
+
+
+
+USE mysql;
+SHOW TABLES
+
+SELECT USER, HOST, PASSWORD FROM USER
+
+CREATE USER 'user_admin'@'localhost';
+
+CREATE USER 'user_supervisor'
+IDENTIFIED BY 'supervisor1'
+
+CREATE USER 'user_kasir'@'127.0.0.1';
+IDENTIFIED BY 'kasir1'
+
+CREATE USER 'igo_if'@'127.0.0.1'
+IDENTIFIED BY 'igo_if24c'
+
+DROP USER 'user_admin'@'localhost'
+
+CREATE USER 'user_admin'@'localhost' IDENTIFIED BY 'admin';
+GRANT SELECT ON 24sa11a159.* TO 
+'user_admin'@'localhost';
+
+CREATE USER 'user_kasir'@'localhost' IDENTIFIED BY 'kasir1';
+GRANT SELECT ON 24sa11a159.tbproduk TO 
+'user_kasir'@'localhost';
+GRANT SELECT ON 24sa11a159.tbpelanggan TO
+'user_kasir'@'localhost';
+
+CREATE USER 'user_owner'@'localhost' IDENTIFIED BY 'sila';
+GRANT ALL ON 24sa11a159.* TO 
+'user_owner'@'localhost';
+
+CREATE USER 'user_pelanggan'@'localhost';
+GRANT SELECT (namaproduk, stok, harga) ON 24sa11a159.tbproduk
+TO 'user_pelanggan'@'localhost';
+
+SHOW GRANT FOR user_owner@localhost;
+SHOW GRANT FOR user_admin@localhost;
+SHOW GRANT FOR user_kasir@localhost;
+SHOW GRANT FOR user_pelanggan@localhost;
+
+
+SET PASSWORD FOR user_owner@'localhost' = PASSWORD('owner');
+
+REVOKE INSERT ON 24sa11a159.* FROM 'user_owner'@'localhost';
+REVOKE ALL ON 24sa11a159.* FROM 'user_owner'@'localhost';
+REVOKE SELECT ON 24sa11a159.* FROM 'user_admin'@'localhost';
+
+
+
+
+
+
+
+
+USE 24sa11a159
+
+SELECT COUNT(namapelanggan) AS "Jumlah Pelanggan" FROM tbpelanggan
+
+SELECT alamatpelanggan, COUNT(namapelanggan) AS "Jumlah Pelanggan"
+FROM tbpelanggan GROUP BY alamatpelanggan
+
+SELECT SUM(stok) AS "Total Stok" FROM tbproduk
+
+SELECT idkategori, SUM(stok) AS "Total Produk"
+FROM tbproduk
+GROUP BY idkategori
+HAVING SUM(stok) >= 10;
+
+SELECT tbproduk.namaproduk, tbkategori.namakategori, tbproduk.harga AS 'Total Harga Produk' 
+FROM tbproduk INNER JOIN tbkategori ON tbproduk.idkategori = tbkategori.idkategori
+
+SELECT tbproduk.namaproduk, tbproduk.idkategori, tbproduk.harga AS 'Total Harga Produk' 
+FROM tbproduk
+
+
+
+
+
+
+
+
+USE 24sa11a159
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+CROSS JOIN tbkategori AS k
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+INNER JOIN tbkategori AS k ON p.idkategori = k.idkategori
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+LEFT JOIN tbkategori AS k ON p.idkategori = k.idkategori
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+RIGHT JOIN tbkategori AS k ON p.idkategori = k.idkategori
+
+SELECT pj.kdjual, k.namakaryawan FROM tbpenjualan AS pj 
+RIGHT JOIN tbkaryawan AS k ON pj.nik = k.nik
+
+SELECT dj.kdjual, p.namaproduk, dj.jumlah, dj.harga, dj.subtotal
+FROM tbdetailjual AS dj INNER JOIN tbproduk AS p
+ON dj.kdproduk = p.kdproduk
+ORDER BY kdjual
+
+SELECT pj.kdjual, k.namakaryawan FROM tbpenjualan AS pj 
+RIGHT JOIN tbkaryawan AS k ON pj.idkaryawan = k.idkaryawan
+
+SELECT dj.notajual, p.namaproduk, dj.jumlah, dj.harga, dj.subtotal
+FROM tbdetailjual AS dj INNER JOIN tbproduk AS p
+ON dj.idproduk = p.idproduk
+ORDER BY notajual
