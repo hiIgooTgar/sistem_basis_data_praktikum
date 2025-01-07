@@ -1,0 +1,31 @@
+USE 24sa11a159
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+CROSS JOIN tbkategori AS k
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+INNER JOIN tbkategori AS k ON p.idkategori = k.idkategori
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+LEFT JOIN tbkategori AS k ON p.idkategori = k.idkategori
+
+SELECT p.idproduk, p.namaproduk, k.namakategori FROM tbproduk AS p
+RIGHT JOIN tbkategori AS k ON p.idkategori = k.idkategori
+
+SELECT pj.kdjual, k.namakaryawan FROM tbpenjualan AS pj 
+RIGHT JOIN tbkaryawan AS k ON pj.nik = k.nik
+
+SELECT dj.kdjual, p.namaproduk, dj.jumlah, dj.harga, dj.subtotal
+FROM tbdetailjual AS dj INNER JOIN tbproduk AS p
+ON dj.kdproduk = p.kdproduk
+ORDER BY kdjual
+
+
+
+SELECT pj.kdjual, k.namakaryawan FROM tbpenjualan AS pj 
+RIGHT JOIN tbkaryawan AS k ON pj.nik = k.nik
+
+SELECT dj.notajual, p.namaproduk, dj.jumlah, dj.harga, dj.subtotal
+FROM tbdetailjual AS dj INNER JOIN tbproduk AS p
+ON dj.idproduk = p.idproduk
+ORDER BY notajual

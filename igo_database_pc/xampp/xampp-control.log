@@ -1,0 +1,167 @@
+10:05:32  [main] 	Initializing Control Panel
+10:05:32  [main] 	Windows Version:  Enterprise  64-bit
+10:05:32  [main] 	XAMPP Version: ???
+10:05:32  [main] 	Control Panel Version: 3.3.0  [ Compiled: Apr 6th 2021 ]
+10:05:32  [main] 	You are not running with administrator rights! This will work for
+10:05:32  [main] 	most application stuff but whenever you do something with services
+10:05:32  [main] 	there will be a security dialogue or things will break! So think 
+10:05:32  [main] 	about running this application with administrator rights!
+10:05:32  [main] 	XAMPP Installation Directory: "d:\if 2024 igo\xampp\"
+10:05:32  [main] 	WARNING: Your install directory contains spaces.  This may break programs/scripts
+10:05:32  [main] 	Checking for prerequisites
+10:05:32  [main] 	All prerequisites found
+10:05:32  [main] 	Initializing Modules
+10:05:32  [Apache] 	Problem detected: Apache Not Found!
+10:05:32  [Apache] 	Disabling Apache buttons
+10:05:32  [Apache] 	Run this program from your XAMPP root directory!
+10:05:32  [Apache] 	Apache Service detected with wrong path
+10:05:32  [Apache] 	Change XAMPP Apache and Control Panel settings or
+10:05:32  [Apache] 	Uninstall/disable the other service manually first
+10:05:32  [Apache] 	Found Path: "C:\xampp\apache\bin\httpd.exe" -k runservice
+10:05:32  [Apache] 	Expected Path: "d:\if 2024 igo\xampp\apache\bin\httpd.exe" -k runservice
+10:05:32  [Apache] 	Problem detected!
+10:05:32  [Apache] 	Port 80 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+10:05:32  [Apache] 	Apache WILL NOT start without the configured ports free!
+10:05:32  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:32  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+10:05:32  [mysql] 	Problem detected: MySQL Not Found!
+10:05:32  [mysql] 	Disabling MySQL buttons
+10:05:32  [mysql] 	Run this program from your XAMPP root directory!
+10:05:32  [mysql] 	MySQL Service detected with wrong path
+10:05:32  [mysql] 	Change XAMPP MySQL and Control Panel settings or
+10:05:32  [mysql] 	Uninstall/disable the other service manually first
+10:05:32  [mysql] 	Found Path: C:\xampp\mysql\bin\mysqld.exe --defaults-file=c:\xampp\mysql\bin\my.ini mysql
+10:05:32  [mysql] 	Expected Path: d:\if 2024 igo\xampp\mysql\bin\mysqld.exe --defaults-file=d:\if 2024 igo\xampp\mysql\bin\my.ini mysql
+10:05:32  [mysql] 	Problem detected!
+10:05:32  [mysql] 	Port 3306 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe""!
+10:05:32  [mysql] 	MySQL WILL NOT start without the configured ports free!
+10:05:32  [mysql] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:32  [mysql] 	or reconfigure MySQL and the Control Panel to listen on a different port
+10:05:32  [filezilla] 	Problem detected: FileZilla Not Found!
+10:05:32  [filezilla] 	Disabling FileZilla buttons
+10:05:32  [filezilla] 	Run this program from your XAMPP root directory!
+10:05:32  [filezilla] 	Problem detected!
+10:05:32  [filezilla] 	Port 21 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe""!
+10:05:32  [filezilla] 	FileZilla WILL NOT start without the configured ports free!
+10:05:32  [filezilla] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:32  [filezilla] 	or reconfigure FileZilla and the Control Panel to listen on a different port
+10:05:32  [mercury] 	Problem detected: Mercury Not Found!
+10:05:32  [mercury] 	Disabling Mercury buttons
+10:05:32  [mercury] 	Run this program from your XAMPP root directory!
+10:05:33  [mercury] 	Problem detected!
+10:05:33  [mercury] 	Port 25 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+10:05:33  [mercury] 	Mercury WILL NOT start without the configured ports free!
+10:05:33  [mercury] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:33  [mercury] 	or reconfigure Mercury and the Control Panel to listen on a different port
+10:05:33  [mercury] 	Problem detected!
+10:05:33  [mercury] 	Port 110 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+10:05:33  [mercury] 	Mercury WILL NOT start without the configured ports free!
+10:05:33  [mercury] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:33  [mercury] 	or reconfigure Mercury and the Control Panel to listen on a different port
+10:05:33  [mercury] 	Problem detected!
+10:05:33  [mercury] 	Port 143 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+10:05:33  [mercury] 	Mercury WILL NOT start without the configured ports free!
+10:05:33  [mercury] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:33  [mercury] 	or reconfigure Mercury and the Control Panel to listen on a different port
+10:05:33  [Tomcat] 	Problem detected: Tomcat Not Found!
+10:05:33  [Tomcat] 	Disabling Tomcat buttons
+10:05:33  [Tomcat] 	Run this program from your XAMPP root directory!
+10:05:33  [Tomcat] 	Problem detected: Required Tool catalina_start.bat Not Found!
+10:05:33  [Tomcat] 	Problem detected: Required Tool catalina_stop.bat Not Found!
+10:05:33  [Tomcat] 	Problem detected: Required Tool catalina_service.bat Not Found!
+10:05:33  [Tomcat] 	Problem detected!
+10:05:33  [Tomcat] 	Port 8080 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe""!
+10:05:33  [Tomcat] 	Tomcat WILL NOT start without the configured ports free!
+10:05:33  [Tomcat] 	You need to uninstall/disable/reconfigure the blocking application
+10:05:33  [Tomcat] 	or reconfigure Tomcat and the Control Panel to listen on a different port
+10:05:33  [main] 	Starting Check-Timer
+10:05:33  [main] 	Control Panel Ready
+10:23:36  [main] 	Deinitializing Modules
+10:23:36  [main] 	Deinitializing Control Panel
+
+09:02:54  [main] 	Initializing Control Panel
+09:02:54  [main] 	Windows Version:  Enterprise  64-bit
+09:02:54  [main] 	XAMPP Version: ???
+09:02:54  [main] 	Control Panel Version: 3.3.0  [ Compiled: Apr 6th 2021 ]
+09:02:54  [main] 	You are not running with administrator rights! This will work for
+09:02:54  [main] 	most application stuff but whenever you do something with services
+09:02:54  [main] 	there will be a security dialogue or things will break! So think 
+09:02:54  [main] 	about running this application with administrator rights!
+09:02:54  [main] 	XAMPP Installation Directory: "d:\if 2024 igo\xampp\"
+09:02:54  [main] 	WARNING: Your install directory contains spaces.  This may break programs/scripts
+09:02:54  [main] 	Checking for prerequisites
+09:02:57  [main] 	All prerequisites found
+09:02:57  [main] 	Initializing Modules
+09:02:57  [Apache] 	Problem detected: Apache Not Found!
+09:02:57  [Apache] 	Disabling Apache buttons
+09:02:57  [Apache] 	Run this program from your XAMPP root directory!
+09:02:57  [Apache] 	Apache Service detected with wrong path
+09:02:57  [Apache] 	Change XAMPP Apache and Control Panel settings or
+09:02:57  [Apache] 	Uninstall/disable the other service manually first
+09:02:57  [Apache] 	Found Path: "C:\xampp\apache\bin\httpd.exe" -k runservice
+09:02:57  [Apache] 	Expected Path: "d:\if 2024 igo\xampp\apache\bin\httpd.exe" -k runservice
+09:02:57  [Apache] 	Problem detected!
+09:02:57  [Apache] 	Port 80 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+09:02:57  [Apache] 	Apache WILL NOT start without the configured ports free!
+09:02:57  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+09:02:57  [Apache] 	Problem detected!
+09:02:57  [Apache] 	Port 443 in use by ""C:\xampp\apache\bin\httpd.exe" -k runservice" with PID 12144!
+09:02:57  [Apache] 	Apache WILL NOT start without the configured ports free!
+09:02:57  [Apache] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [Apache] 	or reconfigure Apache and the Control Panel to listen on a different port
+09:02:57  [mysql] 	Problem detected: MySQL Not Found!
+09:02:57  [mysql] 	Disabling MySQL buttons
+09:02:57  [mysql] 	Run this program from your XAMPP root directory!
+09:02:57  [mysql] 	MySQL Service detected with wrong path
+09:02:57  [mysql] 	Change XAMPP MySQL and Control Panel settings or
+09:02:57  [mysql] 	Uninstall/disable the other service manually first
+09:02:57  [mysql] 	Found Path: C:\xampp\mysql\bin\mysqld.exe --defaults-file=c:\xampp\mysql\bin\my.ini mysql
+09:02:57  [mysql] 	Expected Path: d:\if 2024 igo\xampp\mysql\bin\mysqld.exe --defaults-file=d:\if 2024 igo\xampp\mysql\bin\my.ini mysql
+09:02:57  [mysql] 	Problem detected!
+09:02:57  [mysql] 	Port 3306 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe""!
+09:02:57  [mysql] 	MySQL WILL NOT start without the configured ports free!
+09:02:57  [mysql] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [mysql] 	or reconfigure MySQL and the Control Panel to listen on a different port
+09:02:57  [filezilla] 	Problem detected: FileZilla Not Found!
+09:02:57  [filezilla] 	Disabling FileZilla buttons
+09:02:57  [filezilla] 	Run this program from your XAMPP root directory!
+09:02:57  [filezilla] 	Problem detected!
+09:02:57  [filezilla] 	Port 21 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe""!
+09:02:57  [filezilla] 	FileZilla WILL NOT start without the configured ports free!
+09:02:57  [filezilla] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [filezilla] 	or reconfigure FileZilla and the Control Panel to listen on a different port
+09:02:57  [mercury] 	Problem detected: Mercury Not Found!
+09:02:57  [mercury] 	Disabling Mercury buttons
+09:02:57  [mercury] 	Run this program from your XAMPP root directory!
+09:02:57  [mercury] 	Problem detected!
+09:02:57  [mercury] 	Port 25 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+09:02:57  [mercury] 	Mercury WILL NOT start without the configured ports free!
+09:02:57  [mercury] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [mercury] 	or reconfigure Mercury and the Control Panel to listen on a different port
+09:02:57  [mercury] 	Problem detected!
+09:02:57  [mercury] 	Port 110 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+09:02:57  [mercury] 	Mercury WILL NOT start without the configured ports free!
+09:02:57  [mercury] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [mercury] 	or reconfigure Mercury and the Control Panel to listen on a different port
+09:02:57  [mercury] 	Problem detected!
+09:02:57  [mercury] 	Port 143 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe"" with PID 3300!
+09:02:57  [mercury] 	Mercury WILL NOT start without the configured ports free!
+09:02:57  [mercury] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [mercury] 	or reconfigure Mercury and the Control Panel to listen on a different port
+09:02:57  [Tomcat] 	Problem detected: Tomcat Not Found!
+09:02:57  [Tomcat] 	Disabling Tomcat buttons
+09:02:57  [Tomcat] 	Run this program from your XAMPP root directory!
+09:02:57  [Tomcat] 	Problem detected: Required Tool catalina_start.bat Not Found!
+09:02:57  [Tomcat] 	Problem detected: Required Tool catalina_stop.bat Not Found!
+09:02:57  [Tomcat] 	Problem detected: Required Tool catalina_service.bat Not Found!
+09:02:57  [Tomcat] 	Problem detected!
+09:02:57  [Tomcat] 	Port 8080 in use by ""C:\Program Files (x86)\KeyFocus\KFSensor\bin\kfsnserv.exe""!
+09:02:57  [Tomcat] 	Tomcat WILL NOT start without the configured ports free!
+09:02:57  [Tomcat] 	You need to uninstall/disable/reconfigure the blocking application
+09:02:57  [Tomcat] 	or reconfigure Tomcat and the Control Panel to listen on a different port
+09:02:57  [main] 	Starting Check-Timer
+09:02:57  [main] 	Control Panel Ready
+10:30:16  [main] 	Deinitializing Modules
+10:30:16  [main] 	Deinitializing Control Panel
+

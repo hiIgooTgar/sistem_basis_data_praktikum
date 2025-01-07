@@ -1,0 +1,63 @@
+INSERT INTO tbkaryawan(idkaryawan, namakaryawan, teleponkaryawan, jabatan, sandi) VALUES
+("KRY-1", "Arsila", "089625113", "Owner", "sila"),
+("KRY-2", "Perwira", "08247364", "Supervisor", "wira"),
+("KRY-3", "Misha", "081734764", "Admin", "misha"),
+("KRY-4", "Ica", "089473436", "Kasir 1", "kasir1"),
+("KRY-5", "Agus", "08387383", "Kasir 2", "kasir1");
+
+
+INSERT INTO tbkategori(idkategori, namakategori) VALUES
+("KEY-1", "Komputer"),
+("KEY-2", "Printer"),
+("KEY-3", "Alat Input"),
+("KEY-4", "Aksesoris Komputer"),
+("KEY-5", "Web Camera"),
+("KEY-6", "Monitor"),
+("KEY-7", "Media penyimpanan data");
+
+
+INSERT INTO tbproduk(idproduk, namaproduk, idkategori, stok, harga) VALUES
+("Prd-1", "Acer", "KEY-1", 10, 7000000),
+("Prd-2", "Asus", "KEY-1", 20, 7000000),
+("Prd-3", "Epson", "KEY-2", 5, 2500000),
+("Prd-4", "SPC", "KEY-6", 5, 1500000),
+("Prd-5", "SeaGate", "KEY-7", 5, 1500000);
+
+
+INSERT INTO tbpelanggan(idpelanggan, namapelanggan, alamatpelanggan, teleponpelanggan) VALUES
+("C-1", "Adi Gunawan", "Purwokerto", "083434343"),
+("C-2", "Bia Ramadhan", "Purwokerto", "08244637"),
+("C-3", "Cici Kirana", "Banyumas", "082217362"),
+("C-4", "Dona Ariana", "Purbalingga", "086476423"),
+("C-5", "Emilia", "Banyumas", "085754545"),
+("C-6", "Fino Barlian", "Banyumas", "085354454"),
+("C-7", "Gita Gustian", "Purwokerto", "0856767676"),
+("C-8", "Hanum Permata", "Purbalingga", "08243434");
+
+INSERT INTO tbpemasok(idpemasok, namapemasok, kontak, pic) VALUES
+("Spl-1", "PT Inovasi Sukses Bersama","0874637463", "Ilham Sentosa"),
+("Spl-2", "CV. Zara Tech Achievement", "0849389834", "Zara Zulaikha"),
+("Spl-3", "PT Integra Autona Solusi", "0894834737", "Sultan"),
+("Spl-4", "PT Jete Tenaga Indonesia", "087437434", "Arya Seloka"),
+("Spl-5", "PT Inovasi Kreasi Sarana Prima", "085874584", "Wiryaman"),
+("Spl-6", "PT Jaya Utama", "0834348734", "Wijaya"),
+("Spl-7", "PT Daveeno Group Indonesia", "0827242424", "Davino Suharjo");
+
+INSERT INTO tbpenjualan() VALUES
+("tr-1", "2024-11-01", "KRY-4", "C-2", 30200000),
+("tr-2", "2024-11-01", "KRY-4", "C-1", 27000000),
+("tr-3", "2024-10-29", "KRY-5", "C-3", 34000000),
+("tr-4", "2024-10-30", "KRY-5", "C-8", 30290000),
+("tr-5", "2024-10-01", "KRY-5", "C-2", 27000000);
+
+UPDATE tbpelanggan SET namapelanggan = "Agus Hadi Gunawan" WHERE namapelanggan = "Adi Gunawan";
+
+DELETE FROM  tbkategori WHERE idkategori = "KEY-4";
+
+REPLACE INTO tbkategori(idkategori, namakategori) VALUES("K-5", "Webcam");
+
+SELECT * FROM tbkaryawan WHERE jabatan = "Owner";
+SELECT * FROM tbkategori;
+SELECT * FROM tbproduk;
+SELECT * FROM tbpelanggan;
+SELECT * FROM tbpenjual;
