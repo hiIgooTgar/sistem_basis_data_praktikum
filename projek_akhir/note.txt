@@ -1,0 +1,8 @@
+login admin : 
+username = admin
+password = restoran 
+
+
+login kostomer = 
+1. username = igo
+   password = igo 
