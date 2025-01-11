@@ -11,38 +11,41 @@ if ($_SESSION['role'] == 0 || $_SESSION['role'] == 1) { ?>
                     <div class="list-makanan">
                         <h2>Pesan Makanan</h2>
                         <div class="form-group">
-                            <select name="id_makanan" required>
+                            <select id="makanan" required>
                                 <option value="" disabled selected>Pilih Makanan</option>
                                 <?php
                                 $queryMakanan = mysqli_query($conn, "SELECT * FROM makanan ORDER BY nama_makanan ASC");
                                 while ($rowMakanan = mysqli_fetch_array($queryMakanan)) { ?>
-                                    <option value="<?php $rowMakanan['id_makanan'] ?>"><?= $rowMakanan['nama_makanan'] ?> - Rp. <?= $rowMakanan['harga'] ?></option>
+                                    <option value="<?= $rowMakanan['id_makanan'] ?>" data-harga="<?= $rowMakanan['harga'] ?>">
+                                        <?= $rowMakanan['nama_makanan'] ?> - Rp. <?= $rowMakanan['harga'] ?>
+                                    </option>
                                 <?php } ?>
-
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="jumlah_makanan" placeholder="Jumlah Makanan" required>
+                            <input type="number" id="jumlah_makanan" placeholder="Jumlah Makanan" min="1">
                         </div>
-                        <button class="btn-primary" type="button" onclick="addItemRowMakanan()">Tambah Item</button>
+                        <button class="btn-primary" type="button" onclick="addMakanan()">Tambah Makanan</button>
                     </div>
+
                     <div class="list-minuman">
                         <h2>Pesan Minuman</h2>
                         <div class="form-group">
-                            <select name="id_minuman" required>
+                            <select id="minuman" required>
                                 <option value="" disabled selected>Pilih Minuman</option>
                                 <?php
                                 $queryMinuman = mysqli_query($conn, "SELECT * FROM minuman ORDER BY nama_minuman ASC");
                                 while ($rowMinuman = mysqli_fetch_array($queryMinuman)) { ?>
-                                    <option value="<?php $rowMinuman['id_minuman'] ?>"><?= $rowMinuman['nama_minuman'] ?> - Rp. <?= $rowMinuman['harga'] ?></option>
-
+                                    <option value="<?= $rowMinuman['id_minuman'] ?>" data-harga="<?= $rowMinuman['harga'] ?>">
+                                        <?= $rowMinuman['nama_minuman'] ?> - Rp. <?= $rowMinuman['harga'] ?>
+                                    </option>
                                 <?php } ?>
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="jumlah_minuman" placeholder="Jumlah Minuman" required>
+                            <input type="number" id="jumlah_minuman" placeholder="Jumlah Minuman" min="1">
                         </div>
-                        <button class="btn-primary" type="button" onclick="addItemRowMinuman()">Tambah Item</button>
+                        <button class="btn-primary" type="button" onclick="addMinuman()">Tambah Minuman</button>
                     </div>
                 </div>
                 <div class="right-col">
@@ -50,28 +53,23 @@ if ($_SESSION['role'] == 0 || $_SESSION['role'] == 1) { ?>
                         <div class="detail-total-pesanan">
                             <h2>Detail Pesanan Saya</h2>
                             <table border="1" style="width: 100%;">
-                                <tr>
-                                    <th style="width: 30%;">Makanan</th>
-                                    <td style="width: 70%;">
-                                        <ol>
-                                            <li>Order : Ayam</li>
-                                            <li>qty : 1</li>
-                                        </ol>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 30%;">Minuman</th>
-                                    <td style="width: 70%;">
-                                        <ol>
-                                            <li>Ayam Order : </li>
-                                            <li>qty : 1</li>
-                                        </ol>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th style="width: 30%;">Total Pesanan</th>
-                                    <td style="width: 70%;">Rp. </td>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                        <th>Harga</th>
+                                        <th>Subtotal</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="detailPesanan"></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="3">Total</th>
+                                        <th id="totalHarga">Rp. 0</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                         <h2>Pembayaran</h2>
@@ -94,91 +92,67 @@ if ($_SESSION['role'] == 0 || $_SESSION['role'] == 1) { ?>
     </section>
 
     <script>
-        function addItemRowMakanan() {
-            var container = document.getElementById('list-makanan');
-            var newRow = document.createElement('div');
-            newRow.className = 'form-group-item';
-            newRow.innerHTML = `
-            <div class="form-group">
-                <select name="id_makanan" required>
-                    <option value="" disabled selected>Pilih Makanan</option>
-                    <?php
-                    $queryMakanan = mysqli_query($conn, "SELECT * FROM makanan ORDER BY nama_makanan ASC");
-                    while ($rowMakanan = mysqli_fetch_array($queryMakanan)) { ?>
-                        <option value="<?php $rowMakanan['id_makanan'] ?>"><?= $rowMakanan['nama_makanan'] ?> - Rp. <?= $rowMakanan['harga'] ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="number" name="jumlah_makanan" placeholder="Jumlah Makanan" required>
-            </div>`;
-            container.appendChild(newRow);
+        let totalHarga = 0;
+
+        function addMakanan() {
+            const makananSelect = document.getElementById('makanan');
+            const jumlahMakanan = document.getElementById('jumlah_makanan').value;
+
+            if (!makananSelect.value || !jumlahMakanan || jumlahMakanan <= 0) {
+                alert('Pilih makanan dan masukkan jumlah yang valid!');
+                return;
+            }
+
+            const selectedOption = makananSelect.options[makananSelect.selectedIndex];
+            const namaMakanan = selectedOption.text.split(' - ')[0];
+            const hargaMakanan = parseInt(selectedOption.getAttribute('data-harga'));
+            const subtotal = hargaMakanan * jumlahMakanan;
+
+            addToTable('Makanan', namaMakanan, jumlahMakanan, hargaMakanan, subtotal);
         }
 
-        function addItemRowMinuman() {
-            var container = document.getElementById('list-minuman');
-            var newRow = document.createElement('div');
-            newRow.className = 'form-group-item';
-            newRow.innerHTML = `
-             <div class="form-group">
-                <select name="id_minuman" required>
-                    <option value="" disabled selected>Pilih Minuman</option>
-                    <?php
-                    $queryMinuman = mysqli_query($conn, "SELECT * FROM minuman ORDER BY nama_minuman ASC");
-                    while ($rowMinuman = mysqli_fetch_array($queryMinuman)) { ?>
-                        <option value="<?php $rowMinuman['id_minuman'] ?>"><?= $rowMinuman['nama_minuman'] ?> - Rp. <?= $rowMinuman['harga'] ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="number" name="jumlah_minuman" placeholder="Jumlah Minuman" required>
-            </div>`;
-            container.appendChild(newRow);
+        function addMinuman() {
+            const minumanSelect = document.getElementById('minuman');
+            const jumlahMinuman = document.getElementById('jumlah_minuman').value;
+
+            if (!minumanSelect.value || !jumlahMinuman || jumlahMinuman <= 0) {
+                alert('Pilih minuman dan masukkan jumlah yang valid!');
+                return;
+            }
+
+            const selectedOption = minumanSelect.options[minumanSelect.selectedIndex];
+            const namaMinuman = selectedOption.text.split(' - ')[0];
+            const hargaMinuman = parseInt(selectedOption.getAttribute('data-harga'));
+            const subtotal = hargaMinuman * jumlahMinuman;
+
+            addToTable('Minuman', namaMinuman, jumlahMinuman, hargaMinuman, subtotal);
+        }
+
+        function addToTable(type, name, qty, price, subtotal) {
+            const tableBody = document.getElementById('detailPesanan');
+            const row = document.createElement('tr');
+
+            row.innerHTML = `
+            <td>${type}: ${name}</td>
+            <td>${qty}</td>
+            <td>Rp. ${price.toLocaleString()}</td>
+            <td>Rp. ${subtotal.toLocaleString()}</td>
+            <td><button type="button" onclick="removeRow(this, ${subtotal})">Hapus</button></td>
+        `;
+
+            tableBody.appendChild(row);
+            totalHarga += subtotal;
+            document.getElementById('totalHarga').innerText = `Rp. ${totalHarga.toLocaleString()}`;
+        }
+
+        function removeRow(button, subtotal) {
+            const row = button.parentElement.parentElement;
+            row.remove();
+            totalHarga -= subtotal;
+            document.getElementById('totalHarga').innerText = `Rp. ${totalHarga.toLocaleString()}`;
         }
     </script>
+
 <?php } ?>
 
 <?php include "../components/footer.php"; ?>
-
-<?php
-if (isset($_POST['pesan-menu'])) {
-    $tgl_pesanan = date('Y-m-d H:i:s');
-    $status_pesanan = 'proses'; // Status awal
-    $id_users = $_SESSION['id_users']; // Sesuai dengan session user yang login
-
-    // Insert ke tabel pesanan
-    $queryPesanan = "INSERT INTO pesanan (tgl_pesanan, status_pesanan, id_users) VALUES ('$tgl_pesanan', '$status_pesanan', '$id_users')";
-    if (mysqli_query($conn, $queryPesanan)) {
-        $id_pesanan = mysqli_insert_id($conn);
-
-        // Proses detail pesanan
-        $id_makanan = $_POST['id_makanan'];
-        $jumlah_makanan = $_POST['jumlah_makanan'];
-        $id_minuman = $_POST['id_minuman'];
-        $jumlah_minuman = $_POST['jumlah_minuman'];
-
-        // Ambil harga makanan dan minuman
-        $queryHargaMakanan = mysqli_query($conn, "SELECT harga FROM makanan WHERE id_makanan = '$id_makanan'");
-        $dataHargaMakanan = mysqli_fetch_array($queryHargaMakanan);
-        $hargaMakanan = $dataHargaMakanan['harga'];
-
-        $queryHargaMinuman = mysqli_query($conn, "SELECT harga FROM minuman WHERE id_minuman = '$id_minuman'");
-        $dataHargaMinuman = mysqli_fetch_array($queryHargaMinuman);
-        $hargaMinuman = $dataHargaMinuman['harga'];
-
-        // Hitung total pesanan
-        $totalPesanan = (int)($jumlah_makanan * $hargaMakanan) +  (int)($jumlah_minuman * $hargaMinuman);
-
-        // Insert ke tabel detail_pesanan
-        $queryDetailPesanan = "INSERT INTO detail_pesanan (id_makanan, jumlah_makanan, id_minuman, jumlah_minuman, total_pesanan, id_pesanan)
-                               VALUES ('$id_makanan', '$jumlah_makanan', '$id_minuman', '$jumlah_minuman', '$totalPesanan', '$id_pesanan')";
-        if (mysqli_query($conn, $queryDetailPesanan)) {
-            echo "<script>alert('Pesanan berhasil ditambahkan!'); window.location.href='pesanan.php';</script>";
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
-}
-?>
