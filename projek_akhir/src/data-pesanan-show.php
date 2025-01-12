@@ -3,11 +3,11 @@ $title_web = "Detail Data Pesanan - SrawungRoso";
 include "../koneksi/config.php";
 $id_pesanan = $_GET['id_pesanan'];
 $query = mysqli_query($conn, "SELECT pesanan.*, detail_pesanan.*, makanan.id_makanan, makanan.nama_makanan, makanan.harga AS harga_makanan, minuman.id_minuman, minuman.nama_minuman, minuman.harga AS harga_minuman, pembayaran.*, users.* FROM pesanan
-    INNER JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
-    INNER JOIN makanan ON makanan.id_makanan = detail_pesanan.id_makanan
-    INNER JOIN minuman ON minuman.id_minuman = detail_pesanan.id_minuman
-    INNER JOIN pembayaran ON pembayaran.id_pesanan = pesanan.id_pesanan
-    INNER JOIN users ON users.id_users = pesanan.id_users
+    LEFT JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
+    LEFT JOIN makanan ON makanan.id_makanan = detail_pesanan.id_makanan
+    LEFT JOIN minuman ON minuman.id_minuman = detail_pesanan.id_minuman
+    LEFT JOIN pembayaran ON pembayaran.id_pesanan = pesanan.id_pesanan
+    LEFT JOIN users ON users.id_users = pesanan.id_users
     WHERE pesanan.id_pesanan = '$id_pesanan'");
 $dataPesanan = mysqli_fetch_array($query);
 
@@ -68,13 +68,13 @@ include "../components/header.php" ?>
                             <td><?= $dataPesanan['nama_makanan'] ?> <br> <?= $dataPesanan['nama_minuman'] ?></td>
                             <td><?= $dataPesanan['jumlah_makanan'] ?> <br> <?= $dataPesanan['jumlah_makanan'] ?></td>
                             <td>Rp. <?= $dataPesanan['harga_makanan'] ?> <br> Rp. <?= $dataPesanan['harga_minuman'] ?></td>
-                            <td>Rp. <?= $dataPesanan['harga_makanan'] ?> <br> Rp. <?= $dataPesanan['harga_minuman'] ?></td>
+                            <td>Rp. <?= $dataPesanan['harga_makanan'] * $dataPesanan['jumlah_makanan'] ?> <br> Rp. <?= $dataPesanan['harga_minuman'] * $dataPesanan['jumlah_minuman']  ?></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <th colspan="3">Total harga pesanan</th>
-                            <th id="totalHarga">Rp. <?= $dataPesanan['harga_makanan'] + $dataPesanan['harga_minuman'] ?></th>
+                            <th id="totalHarga">Rp. <?= ($dataPesanan['harga_makanan'] * $dataPesanan['jumlah_makanan']) + ($dataPesanan['harga_minuman'] * $dataPesanan['jumlah_minuman']) ?></th>
                         </tr>
                     </tfoot>
                 </table>

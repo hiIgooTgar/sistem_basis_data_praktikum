@@ -27,8 +27,8 @@ session_start();
                 </div>
                 <div class="nav-list">
                     <a href="./" class="nav-link">Home</a>
-                    <a href="login.php" class="nav-link badge-sign">Masuk</a>
-                    <a href="registrasi.php" class="nav-link badge-sign">Daftar</a>
+                    <a href="login.php" class="badge-sign">Masuk</a>
+                    <a href="registrasi.php" class="badge-sign">Daftar</a>
                 </div>
             </nav>
         </header>
@@ -76,7 +76,7 @@ session_start();
             <h1>Selamat Datang di <span>Srawung</span>Roso</h1>
             <h2>Merasakan Harmoni Rasa dan Suasana <span>Jawa</span></h2>
             <p>Di Srawung Roso, kami menghadirkan cita rasa autentik Jawa yang memanjakan lidah, dipadukan dengan suasana yang hangat dan penuh kenangan. Temukan kelezatan di setiap sajian kami.</p>
-            <button class="btn-menu" type="button">Daftar Menu</button>
+            <a class="btn-menu" href="./src/menu.php">Daftar Menu</a>
         </main>
     </section>
 

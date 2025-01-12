@@ -36,8 +36,8 @@ if (!isset($_SESSION['id_users'])) {
                 </div>
                 <div class="nav-list">
                     <a href="../" class="nav-link">Home</a>
-                    <a href="../login.php" class="nav-link badge-sign">Masuk</a>
-                    <a href="../registrasi.php" class="nav-link badge-sign">Daftar</a>
+                    <a href="../login.php" class="badge-sign">Masuk</a>
+                    <a href="../registrasi.php" class="badge-sign">Daftar</a>
                 </div>
             </nav>
         </header>

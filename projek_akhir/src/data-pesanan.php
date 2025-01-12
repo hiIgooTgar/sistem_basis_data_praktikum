@@ -23,9 +23,9 @@ include "../components/header.php" ?>
                     <?php
                     $a = 1;
                     $query = mysqli_query($conn, "SELECT users.nama, pesanan.*, pembayaran.metode_pembayaran, detail_pesanan.total_pesanan FROM pesanan
-                    INNER JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
-                    INNER JOIN pembayaran ON pembayaran.id_pesanan = pesanan.id_pesanan
-                    INNER JOIN users ON users.id_users = pesanan.id_users
+                    LEFT JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
+                    LEFT JOIN pembayaran ON pembayaran.id_pesanan = pesanan.id_pesanan
+                    LEFT JOIN users ON users.id_users = pesanan.id_users
                     ORDER BY tgl_pesanan DESC");
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
