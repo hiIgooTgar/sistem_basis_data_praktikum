@@ -49,7 +49,7 @@ include "../components/header.php" ?>
                                     <option <?= ($status_pesanan == "diterima") ? "selected" : "" ?> value="diterima">Diterima</option>
                                     <option <?= ($status_pesanan == "gagal") ? "selected" : "" ?> value="gagal">Gagal</option>
                                 </select>
-                                <button type="submit" class="btn-primary" name="updatePesanan" onclick="return confirm('Status ingin diubah?')">Ubah</button>
+                                <button style="margin-bottom: 0;" type="submit" class="btn-primary" name="updatePesanan" onclick="return confirm('Status ingin diubah?')">Ubah</button>
                             </div>
                         </form>
                     </div>
@@ -74,7 +74,7 @@ include "../components/header.php" ?>
                     <tfoot>
                         <tr>
                             <th colspan="3">Total harga pesanan</th>
-                            <th id="totalHarga">Rp. <?= $dataPesanan['jumlah_bayar'] ?></th>
+                            <th id="totalHarga">Rp. <?= $dataPesanan['harga_makanan'] + $dataPesanan['harga_minuman'] ?></th>
                         </tr>
                     </tfoot>
                 </table>

@@ -44,8 +44,8 @@ session_start();
                         <a href="src/menu.php" class="nav-link">Menu</a>
                         <a href="src/data-master-users.php" class="nav-link">Data Master</a>
                         <a href="src/data-pesanan.php" class="nav-link">Pesanan & Pembayaran</a>
-                        <p class="nav-link">Hi, <?= $_SESSION['nama'] ?></p>
-                        <a href="logout.php" class="nav-link btn-logout">Log Out</a>
+                        <p class="badge-primary">Hi, <?= $_SESSION['nama'] ?></p>
+                        <a href="logout.php" class="btn-logout">Log Out</a>
                     </div>
                 </nav>
             </header>
@@ -62,8 +62,8 @@ session_start();
                         <a href="./" class="nav-link">Home</a>
                         <a href="src/menu.php" class="nav-link">Menu</a>
                         <a href="src/history-pesanan.php" class="nav-link">Pesanan Saya</a>
-                        <p class="nav-link">Hi, <?= $_SESSION['nama'] ?></p>
-                        <a href="logout.php" class="nav-link btn-logout">Log Out</a>
+                        <p class="badge-primary">Hi, <?= $_SESSION['nama'] ?></p>
+                        <a href="logout.php" class="btn-logout">Log Out</a>
                     </div>
                 </nav>
             </header>

@@ -48,6 +48,14 @@
   color: var(--primary-dark);
 }
 
+.navbar .nav-list .nav-link {
+  color: #000;
+}
+
+.navbar .nav-list .nav-link:hover {
+  color: var(--primary-dark);
+}
+
 /* .navbar .nav-list .nav-link {
   color: #000;
 } */
@@ -187,6 +195,18 @@
   text-align: center;
   font-size: 0.9rem;
   color: #000;
+}
+
+.badge-primary {
+  display: inline-block;
+  padding: 0.3rem 0.4rem;
+  background: var(--primary-dark);
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
 }
 
 /* form */
