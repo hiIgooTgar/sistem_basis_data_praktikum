@@ -209,6 +209,12 @@
   color: #fff;
 }
 
+.badge-sm {
+  padding: 0.1rem;
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+}
+
 /* form */
 .row-form {
   display: grid;
@@ -302,4 +308,11 @@ textarea:focus {
   padding: 1rem 0;
   background: var(--primary-dark);
   color: #fff;
+}
+
+.kt-kosong {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--primary-dark);
 }

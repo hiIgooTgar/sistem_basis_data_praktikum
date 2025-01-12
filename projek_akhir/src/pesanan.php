@@ -52,7 +52,7 @@ if ($_SESSION['role'] == 1) { ?>
                     <div class="list-bayar">
                         <div class="detail-total-pesanan">
                             <h2>Detail Pesanan Saya</h2>
-                            <table border="1" style="width: 100%;">
+                            <table class="table-pesanan-a">
                                 <thead>
                                     <tr>
                                         <th>Item</th>
@@ -138,7 +138,7 @@ if ($_SESSION['role'] == 1) { ?>
         <td>${qty}</td>
         <td>Rp. ${price.toLocaleString()}</td>
         <td>Rp. ${subtotal.toLocaleString()}</td>
-        <td><button type="button" onclick="removeRow(this, ${subtotal})">Hapus</button></td>
+        <td><button class='btn-delete' style='color:#fff' type="button" onclick="removeRow(this, ${subtotal})">Hapus</button></td>
     `;
 
             tableBody.appendChild(row);
@@ -192,7 +192,7 @@ if (isset($_POST['pesan-menu'])) {
                             VALUES ('', '$jumlah_bayar', '$metode_pembayaran', '$tgl_pesanan', '$id_pesanan')";
         mysqli_query($conn, $queryPembayaran);
 
-        echo "<script>alert('Pesanan berhasil ditambahkan!'); window.location.href='pesanan.php';</script>";
+        echo "<script>alert('Pesanan berhasil ditambahkan!'); window.location.href='history-pesanan.php';</script>";
     } else {
         echo "Error: " . mysqli_error($conn);
     }

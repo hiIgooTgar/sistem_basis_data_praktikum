@@ -5,7 +5,7 @@ include "../components/header.php" ?>
 
 
 <?php if ($_SESSION['role'] == 0) {  ?>
-    <section class="data-master" id="data-makanan">
+    <section class="pesanan" id="pesanan">
         <main class="content">
             <table id="myDataTables" class="display nowrap">
                 <thead>

@@ -38,11 +38,6 @@ include "../components/header.php" ?>
                 </div>
             </div>
         </main>
-        <?php if ($_SESSION['role'] == 1) {  ?>
-            <div class="d-pesan-menu">
-                <a href="./pesanan.php" style="display: flex; align-items: center; gap: 0.5rem" class="btn-primary"><img style="filter: invert(100%);" src="../assets/icon/bootstrap-icons/fast-forward-circle.svg"> Pesan Menu</a>
-            </div>
-        <?php } ?>
     </section>
 <?php } ?>
 

@@ -1,5 +1,5 @@
 <?php
-$title_web = "Detail Data Pesanan - SrawungRoso";
+$title_web = "Detail Data History Pesanan - SrawungRoso";
 include "../koneksi/config.php";
 $id_pesanan = $_GET['id_pesanan'];
 $query = mysqli_query($conn, "SELECT pesanan.*, detail_pesanan.*, makanan.id_makanan, makanan.nama_makanan, makanan.harga AS harga_makanan, minuman.id_minuman, minuman.nama_minuman, minuman.harga AS harga_minuman, pembayaran.*, users.* FROM pesanan
@@ -18,8 +18,8 @@ if (mysqli_num_rows($query) < 1) {
 include "../components/header.php" ?>
 
 
-<?php if ($_SESSION['role'] == 0) {  ?>
-    <section class="pesanan" id="pesanan">
+<?php if ($_SESSION['role'] == 1) {  ?>
+    <section class="history-pesanan" id="history-pesanan">
         <main class="content">
             <div class="d-pesanan">
                 <div class="sub-title-header">
@@ -31,7 +31,7 @@ include "../components/header.php" ?>
                             <p style="margin-left: 0.5rem; padding: 0.4rem;" class="badge-danger">Gagal</p>
                         <?php } ?>
                     </h2>
-                    <a class="btn-primary" href="./data-pesanan.php">Kembali</a>
+                    <a class="btn-primary" href="./history-pesanan.php">Kembali</a>
                 </div>
                 <div class="row-form">
                     <div class="form-group">
@@ -44,12 +44,11 @@ include "../components/header.php" ?>
                             <?php $status_pesanan = $dataPesanan['status_pesanan'] ?>
                             <label for="status_pesanan">Status pesanan</label>
                             <div class="d-ubah-pesanan">
-                                <select class="select" name="status_pesanan" id="status_pesanan">
+                                <select disabled class="select" name="status_pesanan" id="status_pesanan">
                                     <option <?= ($status_pesanan == "proses") ? "selected" : "" ?> value="proses">Proses</option>
                                     <option <?= ($status_pesanan == "diterima") ? "selected" : "" ?> value="diterima">Diterima</option>
                                     <option <?= ($status_pesanan == "gagal") ? "selected" : "" ?> value="gagal">Gagal</option>
                                 </select>
-                                <button style="margin-bottom: 0;" type="submit" class="btn-primary" name="updatePesanan" onclick="return confirm('Status ingin diubah?')">Ubah</button>
                             </div>
                         </form>
                     </div>
@@ -79,34 +78,7 @@ include "../components/header.php" ?>
                     </tfoot>
                 </table>
             </div>
-            <div class="d-pengguna">
-                <div class="sub-title-header">
-                    <h2>Detail Data Pengguna</h2>
-                </div>
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input disabled value="<?= $dataPesanan['nama'] ?>" type="text" name="nama" id="nama">
-                </div>
-                <div class="row-form">
-                    <div class="form-group">
-                        <label for="no_telp">No Telepon</label>
-                        <input disabled value="<?= $dataPesanan['no_telp'] ?>" type="number" name="no_telp" id="no_telp">
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">Jenis Kelamin</label>
-                        <?php $gender = $dataPesanan['gender'] ?>
-                        <select disabled name="gender" id="gender">
-                            <option value="0">-- Pilih Jenis Kelamin --</option>
-                            <option <?= ($gender == "L") ? "selected" : "" ?> value="L">Laki-laki</option>
-                            <option <?= ($gender == "P") ? "selected" : "" ?> value="P">Perempuan</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <textarea disabled name="alamat" id="alamat" cols="30" rows="10"><?= $dataPesanan['alamat'] ?></textarea>
-                </div>
-            </div>
+
             <div class="d-pembayaran">
                 <div class="sub-title-header">
                     <h2>Detail Data Pembayaran</h2>
@@ -138,21 +110,3 @@ include "../components/header.php" ?>
 
 
 <?php include "../components/footer.php" ?>
-
-<?php
-
-if (isset($_POST['updatePesanan'])) {
-    $id_pesanan_update = htmlspecialchars($_POST['id_pesanan']);
-    $status_pesanan = htmlspecialchars($_POST['status_pesanan']);
-
-    $query = mysqli_query($conn, "UPDATE pesanan SET status_pesanan = '$status_pesanan' WHERE pesanan.id_pesanan = '$id_pesanan_update'");
-    if ($query) {
-        echo "<script>alert('Status pesan sukses diubah');
-            window.location.href = 'data-pesanan-show.php?id_pesanan=$id_pesanan'</script>";
-    } else {
-        echo "<script>alert('Status pesan gagal diubah');
-            window.location.href = 'data-pesanan-show.php?id_pesanan=$id_pesanan'</script>";
-    }
-}
-
-?>

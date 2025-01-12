@@ -106,10 +106,3 @@
   border-radius: 2px;
   font-size: 0.95rem;
 }
-
-/* pesan menu */
-.d-pesan-menu {
-  display: flex;
-  padding-top: 2.5rem;
-  justify-content: center;
-}
