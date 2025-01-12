@@ -12,23 +12,38 @@ include "../components/header.php" ?>
                     <tr>
                         <th>No</th>
                         <th>Nama Makanan</th>
-                        <th>Harga</th>
+                        <th>Metode Pembayaran</th>
+                        <th>Total Pesanan</th>
+                        <th>Status Pesanan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $a = 1;
-                    $query = mysqli_query($conn, "SELECT * FROM makanan");
+                    $query = mysqli_query($conn, "SELECT users.nama, pesanan.*, pembayaran.metode_pembayaran, detail_pesanan.total_pesanan FROM pesanan
+                    INNER JOIN detail_pesanan ON pesanan.id_pesanan = detail_pesanan.id_pesanan
+                    INNER JOIN pembayaran ON pembayaran.id_pesanan = pesanan.id_pesanan
+                    INNER JOIN users ON users.id_users = pesanan.id_users
+                    ORDER BY tgl_pesanan DESC");
                     while ($data = mysqli_fetch_array($query)) {
                     ?>
                         <tr>
                             <td><?= $a++ ?></td>
-                            <td><?= $data['nama_makanan']  ?></td>
-                            <td>Rp. <?= $data['harga']  ?></td>
-                            <td>
-                                <a class="btn-edit" href="./data-master-makanan-edit.php?id_makanan=<?= $data['id_makanan'] ?>"><img src="../assets/icon/bootstrap-icons/pencil-square.svg"></a>
-                                <a onclick="return confirm('Data Makanan ingin dihapus?');" class="btn-delete" href="./data-master-makanan-delete.php?id_makanan=<?= $data['id_makanan'] ?>"><img src="../assets/icon/bootstrap-icons/trash-fill.svg"></a>
+                            <td><?= $data['nama']  ?></td>
+                            <td><?= $data['metode_pembayaran']  ?></td>
+                            <td>Rp. <?= $data['total_pesanan']  ?></td>
+                            <td align="center"><?php if ($data['status_pesanan'] == 'diterima') { ?>
+                                    <p class="badge-success">Diterima</p>
+                                <?php } else if ($data['status_pesanan'] == 'proses') { ?>
+                                    <p class="badge-warning">Diproses</p>
+                                <?php } else if ($data['status_pesanan'] == 'gagal') { ?>
+                                    <p class="badge-danger">Gagal</p>
+                                <?php } ?>
+                            </td>
+                            <td align="center">
+                                <a href="./data-pesanan-show.php?id_pesanan=<?= $data['id_pesanan'] ?>" class="btn-show"><img src="../assets/icon/bootstrap-icons/eye-fill.svg" alt=""></a>
+                                <a onclick="return confirm('Data pesanan ingin dihapus?')" href="./data-pesanan-delete.php?id_pesanan=<?= $data['id_pesanan'] ?>" class="btn-delete"><img src="../assets/icon/bootstrap-icons/trash-fill.svg" alt=""></a>
                             </td>
                         </tr>
                     <?php } ?>

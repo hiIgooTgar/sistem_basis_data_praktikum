@@ -39,3 +39,31 @@
 .pesanan .content form .right-col .list-bayar h2 {
   margin-bottom: 1rem;
 }
+
+/* admin */
+.table-pesanan-a {
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.table-pesanan-a th {
+  padding: 0.5rem;
+  border: 1px solid #000;
+}
+
+.table-pesanan-a td {
+  padding: 0.5rem;
+  border: 1px solid #000;
+}
+
+.d-ubah-pesanan {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-ubah-pesanan {
+  display: flex;
+  flex-direction: column;
+}

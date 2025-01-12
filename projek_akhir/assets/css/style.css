@@ -91,6 +91,19 @@
   background: var(--primary-dark-large);
 }
 
+.btn-primary-sm {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1.2px;
+}
+
 .btn-add {
   display: inline-block;
   background: var(--primary-dark);
@@ -137,6 +150,43 @@
 
 .btn-delete img {
   filter: invert(100%);
+}
+
+/* badge */
+.badge-danger {
+  display: inline-block;
+  padding: 0.3rem 0.4rem;
+  background: #ff2828;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.badge-success {
+  display: inline-block;
+  padding: 0.3rem 0.4rem;
+  background: #1cd40b;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.badge-warning {
+  display: inline-block;
+  padding: 0.3rem 0.4rem;
+  background: #ffff14;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #000;
 }
 
 /* form */
@@ -189,6 +239,10 @@ input {
 
 input:focus {
   border: 2px solid var(--primary-dark);
+}
+
+.select-sm {
+  padding: 0.3rem 5rem;
 }
 
 select {
