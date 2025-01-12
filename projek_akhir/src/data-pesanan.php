@@ -1,5 +1,5 @@
 <?php
-$title_web = "Daftar Menu - SrawungRoso";
+$title_web = "Data Pesanan - SrawungRoso";
 include "../koneksi/config.php";
 include "../components/header.php" ?>
 
@@ -12,6 +12,7 @@ include "../components/header.php" ?>
                     <tr>
                         <th>No</th>
                         <th>Nama Makanan</th>
+                        <th>Tanggal Pesanan</th>
                         <th>Metode Pembayaran</th>
                         <th>Total Pesanan</th>
                         <th>Status Pesanan</th>
@@ -31,7 +32,8 @@ include "../components/header.php" ?>
                         <tr>
                             <td><?= $a++ ?></td>
                             <td><?= $data['nama']  ?></td>
-                            <td><?= $data['metode_pembayaran']  ?></td>
+                            <td><?= date("F m Y g:i A", strtotime($data['tgl_pesanan']))  ?></td>
+                            <td align="center"><span class="badge-primary"><?= ucfirst($data['metode_pembayaran'])  ?></span></td>
                             <td>Rp. <?= $data['total_pesanan']  ?></td>
                             <td align="center"><?php if ($data['status_pesanan'] == 'diterima') { ?>
                                     <p class="badge-success">Diterima</p>

@@ -1,5 +1,5 @@
 <?php
-$title_web = "Daftar Menu - SrawungRoso";
+$title_web = "Detail Data Pesanan - SrawungRoso";
 include "../koneksi/config.php";
 $id_pesanan = $_GET['id_pesanan'];
 $query = mysqli_query($conn, "SELECT pesanan.*, detail_pesanan.*, makanan.id_makanan, makanan.nama_makanan, makanan.harga AS harga_makanan, minuman.id_minuman, minuman.nama_minuman, minuman.harga AS harga_minuman, pembayaran.*, users.* FROM pesanan
